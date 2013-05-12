@@ -1,0 +1,38 @@
+ {
+  "manifest_version": 2,
+  "name" : "__MSG_extTitle__",
+  "version" : "1.0.0",
+  "default_locale": "en",
+  "description" : "__MSG_extDescription__",
+  "browser_action": {
+      "default_title": "Preferences",
+      "default_icon": "img/icon32.png",
+      "default_popup": "index.html"
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "options_page":"pref/index.html",
+  "background": {
+      "page":"background.html"
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://www.example.com/*",
+        "http://www.example2.com/*"
+      ],
+      "js" : 
+      [
+        "src/contentscript.js"
+        ],
+      "run_at" : "document_idle",
+      "all_frames" : true
+    }
+  ],
+  "permissions" : ["background","tabs","unlimitedStorage"]
+  ,
+  "icons" : {
+    "128" : "img/icon128.png",
+    "48" : "img/icon48.png",
+    "32" : "img/icon32.png"
+  }
+}

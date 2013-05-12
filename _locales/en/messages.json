@@ -1,0 +1,11 @@
+{
+	"extLocale": {
+		"message": "en"
+	},
+	"extTitle": {
+		"message": "Chrome Extension Skeleton"
+	},
+	"extDescription": {
+		"message": "Simple skeleton of a Google Chrome Extension"
+	}	
+}
