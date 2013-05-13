@@ -1,19 +1,30 @@
  {
-  "manifest_version": 2,
   "name" : "__MSG_extTitle__",
   "version" : "1.0.0",
-  "default_locale": "en",
+  "manifest_version": 2,
+  
   "description" : "__MSG_extDescription__",
+  "default_locale": "en",
+  "icons" : {
+    "128" : "img/icon128.png",
+    "48" : "img/icon48.png",
+    "32" : "img/icon32.png"
+  },
+  
   "browser_action": {
       "default_title": "Preferences",
       "default_icon": "img/icon32.png",
       "default_popup": "index.html"
   },
-  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-  "options_page":"pref/index.html",
+  /* "browser_action":{}, */
+  /* "page_action":{}, */
+  /* "theme":{}, */
+  /* "app":{}, */
+  
   "background": {
       "page":"background.html"
   },
+  /* "chrome_url_overrides":{}, */
   "content_scripts" : [
     {
       "matches" : [
@@ -28,11 +39,40 @@
       "all_frames" : true
     }
   ],
-  "permissions" : ["background","tabs","unlimitedStorage"]
-  ,
-  "icons" : {
-    "128" : "img/icon128.png",
-    "48" : "img/icon48.png",
-    "32" : "img/icon32.png"
-  }
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "options_page":"pref/index.html",
+  /*
+    Declare Premissions
+    http://developer.chrome.com/extensions/declare_permissions.html
+  */
+  "permissions" : [
+      /* "activeTab", */
+      "background",
+      /* "bookmarks", */
+      /* "chrome://favicon/", */
+      /* "clipboardRead", */
+      /* "clipboardWrite", */
+      /* "contentSettings", */
+      /* "contextMenus", */
+      /* "cookies", */
+      /* "experimental", */
+      /* "fileBrowserHandler", */
+      /* "geolocation", */
+      /* "history", */
+      /* "idle", */
+      /* "management", */
+      /* "notifications", */
+      /* "privacy", */
+      /* "proxy", */
+      /* "storage", */
+      /* "tabs", */
+      /* "topSites", */
+      /* "tts", */
+      /* "ttsEngine", */
+      /* "unlimitedStorage", */
+      /* "webNavigation", */
+      /* "webRequest", */
+      /* "webRequestBlocking", */
+  ]
+
 }
